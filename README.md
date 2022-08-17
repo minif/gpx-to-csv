@@ -20,4 +20,4 @@ This software is licenced under the [public domain](https://github.com/minif/gpx
 You may use it in any way without restriction. 
 
 [utm](https://github.com/Turbo87/utm), used for coordinate conversion, is licenced under
-[MIT]((https://github.com/Turbo87/utm/blob/81987caa30465e963a9163b6d701ea568f67af9f/LICENSE)).
+[MIT](https://github.com/Turbo87/utm/blob/81987caa30465e963a9163b6d701ea568f67af9f/LICENSE).
