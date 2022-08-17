@@ -1,5 +1,20 @@
 from xml.dom.minidom import parse
+import utm
 doc = parse('/Users/minif/Desktop/test.GPX')#DEBUG/WIP!
+
+def get_point_name(point):
+    name = point.getElementsByTagName("name")[0].firstChild.nodeValue
+    return name
+
+def get_point_UTM(point):
+    lat = point.getAttribute("lat")
+    lon = point.getAttribute("lon")
+    UTM = utm.from_latlon(lat, lon)
+    return UTM
+
+def get_point_ele(point):
+    name = point.getElementsByTagName("ele")[0].firstChild.nodeValue
+    return name
 
 def returnPointInfo(point):
     """
@@ -7,7 +22,7 @@ def returnPointInfo(point):
     :param point: Proper DOM object waypoint (wpt) from a .gpx (1.1) file
     :return: String, with name, lat, long, and elevation (comma seperated)
     """
-    text = "%s,%s,%s,%s"%(point.getElementsByTagName("name")[0].firstChild.nodeValue,point.getAttribute("lat"),point.getAttribute("lon"),point.getElementsByTagName("ele")[0].firstChild.nodeValue)
+    text = "%s,%s,%s"%(get_point_name(point),get_point_UTM(point),get_point_ele(point))
     return text
 
 def main():
@@ -18,5 +33,4 @@ def main():
     points = doc.getElementsByTagName("wpt")
     for i in points:
         print(returnPointInfo(i))
-
 main()
