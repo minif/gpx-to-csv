@@ -1,10 +1,10 @@
 # gpx-to-csv
 A simple tool that converts and compiles .gpx files into .csv files.
 
-###Requires
+### Requires
 - Python 3.6
 
-###Usage
+### Usage
 - Download repository to computer
 - Place .gpx files into the /input folder
 - In terminal, run the following command: 
@@ -15,7 +15,7 @@ python main.py
 ```
 - Points should now be found in .csv
 
-###License
+### License
 This software is licenced under the [public domain](https://github.com/minif/gpx-to-csv/blob/main/LICENSE). 
 You may use it in any way without restriction. 
 
