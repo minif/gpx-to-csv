@@ -1,5 +1,5 @@
 from xml.dom.minidom import parse
-import utm
+import utm.conversion
 doc = parse('/Users/minif/Desktop/test.GPX')#DEBUG/WIP!
 
 def get_point_name(point):
@@ -7,9 +7,9 @@ def get_point_name(point):
     return name
 
 def get_point_UTM(point):
-    lat = point.getAttribute("lat")
-    lon = point.getAttribute("lon")
-    UTM = utm.from_latlon(lat, lon)
+    lat = float(point.getAttribute("lat"))
+    lon = float(point.getAttribute("lon"))
+    UTM = utm.conversion.from_latlon(lat, lon)
     return UTM
 
 def get_point_ele(point):
